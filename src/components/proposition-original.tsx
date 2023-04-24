@@ -1,27 +1,40 @@
 import React from "react";
-import { Text } from "@mantine/core";
+import { Alert, Button, Text } from "@mantine/core";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function PropositionOriginal() {
+export default function PropositionOriginal({
+  content,
+  originalLink,
+}: {
+  content: string | undefined;
+  originalLink: string | undefined;
+}) {
   return (
     <>
-      <Text color="gray.6">
-        현행법에 따르면 노동조합을 설립하고자 하는 자는 노동조합의 명칭, 소재지,
-        조합원수, 연합단체의 명칭 등을 기재한 신고서에 규약을 첨부하여
-        제출하도록 하고 있음. 또 명칭이나 소재지, 대표자의 성명, 연합단체의
-        명칭이 변경된 경우에는 변경사항을 신고하도록 하고 있음. 그러나
-        지부ㆍ지회ㆍ분회 등의 명칭을 사용하는 노동조합 산하조직에 관한 사항에
-        대하여는 규율하고 있지 아니하여 이로 인한 폐해가 드러나는 등 적절한
-        관리가 필요하다는 의견이 있음. 최근 부산광역시의 건설현장에서 장애인
-        노조원 고용 요구와 불법 외국인 고용 근절을 명목으로 시위를 하며 해당
-        건설업체로부터 금품을 받은 혐의로 장애인노조 지부장 등이 구속되었는데,
-        이들이 속한 지부 조합원 중에는 장애인이 한 명도 소속되어 있지 아니한
-        것으로 드러났음.
-        <br /> <br /> 이에 노동조합의 규약에 산하조직에 관한 사항을 기재하도록
-        하여 내부 통제를 강화하고, 노동조합의 설립 신고 사항 또는 변경사항에
-        산하조직과 관련한 사항을 추가하여 노동조합의 산하조직에 대하여도
-        행정관청이 관리하도록 함으로써 일부 산하조직의 폐해를 예방하고
-        노동조합에 대한 국민의 신뢰도를 증진시키고자 함(안 제10조 등).
-      </Text>
+      <Alert color="gray.6" styles={{ message: { marginBottom: 16 } }}>
+        <Text
+          style={{
+            fontSize: 14,
+            whiteSpace: "pre-wrap",
+            lineHeight: 1.8,
+            color: "#4e5968",
+            fontWeight: 400,
+          }}
+        >
+          {content}
+        </Text>
+        <Button
+          component="a"
+          href={originalLink}
+          target="_blank"
+          rel="noreferrer noopener"
+          fullWidth
+          mt={24}
+          variant="outline"
+        >
+          원문 사이트 보러가기
+        </Button>
+      </Alert>
     </>
   );
 }

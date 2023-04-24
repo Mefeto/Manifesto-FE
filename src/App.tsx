@@ -9,7 +9,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/detail" element={<PropositionContent />} />
+          <Route path="/proposition/:id" element={<PropositionContent />} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
