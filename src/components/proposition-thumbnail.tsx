@@ -3,6 +3,8 @@ import { Badge, Card, Group, Text } from "@mantine/core";
 import { useHover } from "@mantine/hooks";
 import { useNavigate } from "react-router-dom";
 
+// test data
+
 export default function PropositionThumbnail() {
   const { ref, hovered } = useHover();
   const router = useNavigate();

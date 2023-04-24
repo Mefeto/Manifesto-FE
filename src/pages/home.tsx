@@ -1,5 +1,6 @@
 import Layout from "../components/layout";
 import {
+  Accordion,
   Badge,
   Button,
   Card,
@@ -17,6 +18,7 @@ import {
 import React from "react";
 import { navData } from "../lib/const/navigate";
 import PropositionThumbnail from "../components/proposition-thumbnail";
+import { IconPlus } from "@tabler/icons-react";
 
 export default function Home() {
   const items = navData.map((item) => (
@@ -47,7 +49,37 @@ export default function Home() {
         <Flex gap={40} justify="center">
           <Stack w={200} justify={"flex-start"}>
             <Text color={"dimmed"}>필터</Text>
-            <>{items}</>
+            <Accordion
+              chevron={<IconPlus size="1rem" />}
+              styles={{
+                chevron: {
+                  "&[data-rotate]": {
+                    transform: "rotate(45deg)",
+                  },
+                },
+                panel: {
+                  marginTop: 8,
+                },
+              }}
+            >
+              {/*<Accordion.Item value="키워드">*/}
+              {/*  <Accordion.Control>키워드</Accordion.Control>*/}
+              {/*  <Accordion.Panel>*/}
+              {/*    <Stack>*/}
+              {/*      <Checkbox label="test" />*/}
+              {/*      <Checkbox label="test" />*/}
+              {/*      <Checkbox label="test" />*/}
+              {/*      <Checkbox label="test" />*/}
+              {/*    </Stack>*/}
+              {/*  </Accordion.Panel>*/}
+              {/*</Accordion.Item>*/}
+              <Accordion.Item value="소관위원회">
+                <Accordion.Control>소관위원회</Accordion.Control>
+                <Accordion.Panel>
+                  <Stack>{items}</Stack>
+                </Accordion.Panel>
+              </Accordion.Item>
+            </Accordion>
           </Stack>
           {/*<GridProposition />*/}
           <Stack w={"calc(100% - 300px)"} justify={"flex-start"}>
