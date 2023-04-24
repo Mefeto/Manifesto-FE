@@ -23,9 +23,9 @@ function PropositionThumbnail({
   const router = useNavigate();
   const thumbnails = data
     .filter((item) =>
-      searchFilters.length === 0
+      item.COMMITTEE === null || searchFilters.length === 0
         ? true
-        : searchFilters.includes(item.COMMITTEE ? item.COMMITTEE : "")
+        : searchFilters.includes(item.COMMITTEE)
     )
     .filter(
       (item) =>
