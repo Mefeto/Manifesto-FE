@@ -4,15 +4,36 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/manifestologo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="title" content="Manifesto" />
-      <meta name="description" content="국회 법률 발의안 검색 및 AI 분석 제공 서비스"/>
-      <meta property="og:type" content="website"/>
-      <meta property="og:url" content="https://manifesto-fe.vercel.app/"/>
-      <meta property="og:title" content="Manifesto" />
-      <meta property="og:site_name" content="Manifesto"/>
-      <meta property="og:description" content="국회 법률 발의안 검색 및 AI 분석 제공 서비스" />
+    <meta name="title" content="Manifesto" />
+    <meta
+      name="description"
+      content="국회 법률 발의안 검색 및 AI 분석 제공 서비스"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manifesto-fe.vercel.app/" />
+    <meta property="og:title" content="Manifesto" />
+    <meta property="og:site_name" content="Manifesto" />
+    <meta
+      property="og:description"
+      content="국회 법률 발의안 검색 및 AI 분석 제공 서비스"
+    />
     <title>Manifesto</title>
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-PLV300GCFH"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-PLV300GCFH");
+  </script>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
